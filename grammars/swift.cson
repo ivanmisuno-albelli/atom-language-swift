@@ -279,18 +279,38 @@
         |            \\g<integer-literal>
       '
   'literal-string':
-    'name': 'string.quoted.double.swift'
-    'begin': '"'
-    'end': '"'
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.swift'
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.swift'
     'patterns': [
       {
-        'include': '#quoted-text'
+        'name': 'string.multiline-string-literal.swift'
+        'begin': '"""'
+        'end': '"""'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.swift'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.swift'
+        'patterns': [
+          {
+            'include': '#quoted-text'
+          }
+        ]
+      }
+      {
+        'name': 'string.quoted.double.swift'
+        'begin': '"'
+        'end': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.swift'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.swift'
+        'patterns': [
+          {
+            'include': '#quoted-text'
+          }
+        ]
       }
     ]
   'operator':
